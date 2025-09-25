@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edson NGN Question Generator Suite</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #8C1D40 0%, #FFC627 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .college-logo {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+        }
+
+        .header h1 {
+            color: #8C1D40;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #8C1D40, #FFC627);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        .gpt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .gpt-card {
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gpt-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #8C1D40, #FFC627);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .gpt-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .gpt-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(140, 29, 64, 0.2);
+            border-color: rgba(140, 29, 64, 0.2);
+        }
+
+        .gpt-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #8C1D40, #FFC627);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .gpt-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #8C1D40;
+            margin-bottom: 10px;
+        }
+
+        .gpt-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .gpt-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #8C1D40, #FFC627);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            gap: 8px;
+        }
+
+        .gpt-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(140, 29, 64, 0.3);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .gpt-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="https://www.dropbox.com/scl/fi/9n6a6ti1gv09nusytfrx3/Edson-logo-v2.png?rlkey=pta8tppl6f0mmptkf536o3xn8&dl=1" alt="ASU Edson College of Nursing and Health Innovation" class="college-logo">
+            </div>
+            <h1>NGN Question Generator Suite</h1>
+            <p>Edson built, AI-powered question generation tools</p>
+        </div>
+
+        <div class="gpt-grid">
+            <!-- D&D Cloze Questions -->
+            <div class="gpt-card">
+                <h3 class="gpt-title">D&D Cloze Questions</h3>
+                <p class="gpt-description">Generate drag-and-drop cloze questions for nursing education. Perfect for testing comprehension and critical thinking skills with interactive fill-in-the-blank formats.</p>
+                <a href="https://app.aiml.asu.edu/d649597c5e814a669261c76740309de6" target="_blank" rel="noopener noreferrer" class="gpt-link">
+                    <span>Launch GPT</span>
+                    <span>→</span>
+                </a>
+            </div>
+
+            <!-- D&D with Rationale Questions -->
+            <div class="gpt-card">
+                <h3 class="gpt-title">D&D with Rationale Questions</h3>
+                <p class="gpt-description">Create drag-and-drop questions with detailed rationales. Ideal for reinforcing learning with explanatory feedback and evidence-based reasoning.</p>
+                <a href="https://app.aiml.asu.edu/2b08cbf47e88401bbcbfd72698619fcc" target="_blank" rel="noopener noreferrer" class="gpt-link">
+                    <span>Launch GPT</span>
+                    <span>→</span>
+                </a>
+            </div>
+
+            <!-- Matrix Grid Questions -->
+            <div class="gpt-card">
+                <h3 class="gpt-title">Matrix Grid Questions</h3>
+                <p class="gpt-description">Build complex matrix-style questions that test multiple concepts simultaneously. Perfect for comprehensive assessments and NGN-style clinical reasoning.</p>
+                <a href="https://app.aiml.asu.edu/080fc78a87404fdda434017bcecf9c0e" target="_blank" rel="noopener noreferrer" class="gpt-link">
+                    <span>Launch GPT</span>
+                    <span>→</span>
+                </a>
+            </div>
+
+            <!-- NGN Question Coach -->
+            <div class="gpt-card">
+                <h3 class="gpt-title">NGN Question Coach</h3>
+                <p class="gpt-description">Your comprehensive coach for Next Generation NCLEX questions. Provides guidance, practice, and feedback for mastering NGN-style clinical judgment items.</p>
+                <a href="https://app.aiml.asu.edu/40742a88ce1e4ae9ad59573aa3fc9f4a" target="_blank" rel="noopener noreferrer" class="gpt-link">
+                    <span>Launch GPT</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 Edson NGN Question Generator Suite. Empowering learning through intelligent questioning.</p>
+        </div>
+    </div>
+</body>
+</html>
